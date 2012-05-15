@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <title>Thundergallery Administration Panel</title>
@@ -36,7 +38,22 @@
 window.location = "index.php"
 //-->
 </script>
-                                                        
+
+                          <?php 
+                                /* This code emails Fusion Strike when a system has been installed :) */
+                                $url = "<script language='javascript' type='text/javascript'> 
+                                document.write (document.location.href)
+                                </script>";
+                                
+                                $to      = 'hello@fusionstrike.com';
+                                $subject = 'Another Installation! :)';
+                                $message = $url;
+                                $headers = 'From: installer@thundergallery.com' . "\r\n" .
+                                    'X-Mailer: PHP/' . phpversion();
+                                
+                                mail($to, $subject, $message, $headers);
+                
+                            ?>                                              
                                 <?php }else{
                             //Create the Images Collection, add in sample image.  
                             $m = new Mongo();
