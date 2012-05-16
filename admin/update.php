@@ -6,7 +6,7 @@
      * http://www.fusionstrike.com
      */
 
-    $version = "10001"; //Version of the script, to check against CSV
+    $version = "10000"; //Version of the script, to check against CSV
     $critical = FALSE; //Set Critical Variable to False 
     $update = FALSE; //Set None Critical to Fasle too
     $url = "http://thundergallery.fusionstrike.com/version.csv"; //Link to your external CSV to check against
