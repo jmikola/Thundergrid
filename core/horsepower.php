@@ -1,25 +1,19 @@
 <link rel="stylesheet" href="../thundergallery/themes/default/style.css" type="text/css" />
 
 <?php 
-require 'config.php';
-	function displayGallery(){
-		//Make Mongo connections global
-		global $m;
-		global $db;
-		global $collection;
-		global $cursor;
-		global $collection;		
-		
-		// Iterate through the found image results
-		foreach ($cursor as $obj) {
-			echo "
-			
-	<a href='http://thundergallery.fusionstrike.com/thundergallery" . $obj["url"] ."' class='lightbox_trigger'><img src='http://thundergallery.fusionstrike.com/thundergallery" . $obj["url"] . "' height='". $obj["height"] ."px' width='". $obj["width"] ."px'></a>
-			
-			";
-			 
-		}
-		
-		
-		}
+    require 'config.php';
+    	function displayGallery(){
+            $m = new Mongo();
+            $db = $m->thundergallery;
+            $collection = $db->images;
+            $cursor = $collection->find();
+        
+            foreach ($cursor as $obj) {
+                $unique_id = $obj['unique_id'];
+                echo "<a href='core/getimage.php?unique_id=".$unique_id."' class='lightbox_trigger'><img height='100px' width='100px' src='core/getimage.php?unique_id=".$unique_id."'></a>";
+            }	
+    	}
 ?>
+
+
+

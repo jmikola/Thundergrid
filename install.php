@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <title>Thundergallery Administration Panel</title>

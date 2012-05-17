@@ -5,6 +5,10 @@
 	$db = $m->thundergallery;
 	$collection = $db->images;
 	$cursor = $collection->find();
+    
+    
+    // GridFS
+    $grid = $db->getGridFS();
 
 ?>
 <!DOCTYPE html> 

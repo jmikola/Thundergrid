@@ -19,7 +19,7 @@
         <div class='upload'>
             <?php include 'update.php'; ?>
             Hello! Welcome to your administration.<br/>
-            This administration is in development.<br/><br/>
+            It's important to note that images are not stored in your file system, but they are stored within Mongo itself. <br/><br/>
             <a href='upload.php'><img src='images/upload.PNG'></a> <a href='settings.php'><img src='images/settings.PNG'></a>
 
         

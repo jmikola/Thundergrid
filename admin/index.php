@@ -66,7 +66,7 @@ if (file_exists($filename)) {?>
               
         <div class='login'>
             <form action='index.php' method='post'>
-               <br/> You're not logged in as an admin, please do so. <br/><br/>
+               <br/> You must be logged in to manage the gallery. <br/><br/>
                 <?php if($wrongflag == 1){ echo "<font size='2px' color='red' face='Arial'> Wrong Username/Password </font><br/>";} ?>
                 <input class='login-text' type='text' name='username' value='Username' onFocus="if(this.value == 'Username') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Username';}">
                 <input class='login-text' type='password' name='password' value='Password' onFocus="if(this.value == 'Password') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Password';}">
@@ -74,7 +74,7 @@ if (file_exists($filename)) {?>
             </form>
         
             <br/><br/>
-        <font size='1px' face='Arial'>Powered by <a href='http://thundergallery.fusionstrike.com'>Thundergallery</a>.
+        <font size='1px'>Powered by <a href='http://thundergallery.fusionstrike.com'>Thundergallery</a>, developed by <a href='http://www.fusionstrike.com'>Fusion Strike</a>.
     </div>
 <?php
     }

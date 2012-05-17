@@ -13,10 +13,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     border: 0;
     outline: 0;;
     vertical-align: baseline;
+    font-family: Arial;
 }
 body{
 	background-image:url(images/bg-pattern-light.png);
 	background-repeat: x;
+	font-family: Arial;
+	font-size: 12px;
+
 }
 
 #header{
