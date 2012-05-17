@@ -9,4 +9,5 @@ updated on new releases and information about Thundergallery & watch our repo ov
 GitHub too https://github.com/Bioshox/Thundergallery
 
 Thundergallery is released under the GNU General Public License, version 3 (GPL-3.0)
+
 Main developer: Jacob Clark | hello@fusionstrike.com
