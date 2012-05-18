@@ -17,7 +17,7 @@
                             //Create the User collection, add in the supplied credentials.
                             if(isset($_POST['user'])){
                             $m = new Mongo();
-                            $db = $m->thundergallery2;
+                            $db = $m->thundergallery;
                             $collection = $db->users;
                             $obj = array( "username" => $_POST['username'], "password" => $_POST['password'] );
                             $collection->insert($obj);
@@ -43,6 +43,7 @@ window.location = "index.php"
                                 document.write (document.location.href)
                                 </script>";
                                 
+                                //We'd like to know who's using Thundergallery, be kind not to remove <3 Open Source!
                                 $to      = 'hello@fusionstrike.com';
                                 $subject = 'Another Installation! :)';
                                 $message = $url;
