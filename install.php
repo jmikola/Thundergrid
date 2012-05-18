@@ -32,16 +32,27 @@
                             Setup complete! 
                             
                             <script type="text/javascript">
-<!--
-window.location = "index.php"
-//-->
-</script>
-
-                          <?php 
+                            
+                            <!--
+                            window.location = "index.php"
+                            //-->
+                            </script>
+                            
+<?php 
+                              function curPageURL() {
+                                 $pageURL = 'http';
+                                 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+                                 $pageURL .= "://";
+                                 if ($_SERVER["SERVER_PORT"] != "80") {
+                                  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+                                 } else {
+                                  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+                                 }
+                                 return $pageURL;
+                                }
+                              
                                 /* This code emails Fusion Strike when a system has been installed :) */
-                                $url = "<script language='javascript' type='text/javascript'> 
-                                document.write (document.location.href)
-                                </script>";
+                                $url =  curPageURL();
                                 
                                 //We'd like to know who's using Thundergallery, be kind not to remove <3 Open Source!
                                 $to      = 'hello@fusionstrike.com';
