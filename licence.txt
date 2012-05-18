@@ -1,4 +1,4 @@
-Thundergallery - MongoDB, GridFS & PHP Image Gallery
+Thundergallery - MongoDB, GridFS & PHP powered image gallery
 http://www.thundergallery.fusionstrike.com
 
 Copyright 2012 by the contributors
@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 This program incorporates work covered by the following copyright and
 permission notices:
 
-  Thundergallery - MongoDB, GridFS & PHP Image Gallery
+  Thundergallery - MongoDB, GridFS & PHP powered image gallery
 
   Copyright 2012 by the contributors
 
