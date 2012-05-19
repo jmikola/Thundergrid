@@ -5,14 +5,14 @@
 	</head>
 
 	<body>
-		<img src='../thundergallery/core/thundergallery_logo.png'><br/><br/><br/>	
+		<img src='core/thundergallery_logo.png'><br/><br/><br/>	
 		
 		<?php $filename = 'installed.del.conf'; if (file_exists($filename)) {?>
   
 		<font face='Arial' size='2px'>
 			<center>
 			    <strong>Thundergallery</strong> is not installed, 
-    			<a href='../thundergallery/install.php'>please run the installer</a><br/><br/>
+    			<a href='install.php'>please run the installer</a><br/><br/>
     			<br/><br/>This is an alpha release, some things may not work. 
     			<br/>Be sure to check 
     			<a href='https://github.com/Bioshox/Thundergallery'>https://github.com/Bioshox/Thundergallery</a> 

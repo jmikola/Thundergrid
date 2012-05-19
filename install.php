@@ -3,12 +3,12 @@
         <title>Thundergallery Administration Panel</title>
         <link rel="stylesheet" href="admin/style.css" type="text/css" />
         <?php
-            require 'core/config.php';
+            include 'core/config.php';
         ?>
     </head>
     <body>
         <div id='header'>
-            <img src='/../thundergallery/core/thundergallery_logo.png'>
+            <img src='../core/thundergallery_logo.png'>
         </div>  
         
         <div class='install'>              
