@@ -1,10 +1,8 @@
+<?php include 'core/config.php'; ?>
 <html>
     <head>
         <title>Thundergallery Administration Panel</title>
         <link rel="stylesheet" href="admin/style.css" type="text/css" />
-        <?php
-            include 'core/config.php';
-        ?>
     </head>
     <body>
         <div id='header'>
