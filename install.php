@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id='header'>
-            <img src='../core/thundergallery_logo.png'>
+            <img src='core/thundergallery_logo.png'>
         </div>  
         
         <div class='install'>              

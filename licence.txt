@@ -1,5 +1,5 @@
 Thundergallery - MongoDB, GridFS & PHP powered image gallery
-http://www.thundergallery.fusionstrike.com
+http://thundergallery.fusionstrike.com
 
 Copyright 2012 by the contributors
 
