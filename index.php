@@ -1,5 +1,6 @@
+<img src='lib/images/thundergrid_logo.png'><br/><br/>
 <?php 
-	require 'thundergallery.php';
+	require 'thundergrid.php';
 	$connect = new Gallery();
 	$uniqueID = $connect->uniqueID();
 ?>

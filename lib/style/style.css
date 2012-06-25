@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;;
+    vertical-align: baseline;
+    font-family: Arial;
+}
+body{
+	font-family: Arial;
+	font-size: 12px;
+
+}
+
+#header{
+	height: 120px;
+	width: 100%;
+	}
+
+.login
+	{
+	margin: auto;
+	min-height:270px;
+	width: 1024px;
+	padding-bottom: 10px;
+}
+
+.upload{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.login-text{
+	border: 1px dashed #bab8b6;
+	height: 25px;
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 250px;
+	text-align:center;
+}
+
+.login-button{
+	border: 1px solid #bab8b6;
+	background-color: #444444;
+	color: #FFFFFF;
+	height: 30px;
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 250px;
+	text-align:center;
+	cursor:pointer;
+
+}
+
+
+.upload-button{
+	border: 1px solid #bab8b6;
+	background-color: #444444;
+	color: #FFFFFF;
+	width: 100px;
+	cursor:pointer;
+
+}
+
+.install{
+	margin-top: 10px;
+	width: 800px;
+	margin-left: 100px;
+}
