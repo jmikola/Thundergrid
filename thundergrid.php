@@ -19,7 +19,7 @@ class Gallery extends Controller {
         foreach ($this->grid->find() as $file) {
             $id = (string) $file->file['_id'];
             $filename = $file->file["filename"];
-            $filetype = isset($file->file["filetype"]) ? $file->file["filetype"] : 'unknown';
+            $filetype = isset($file->file["filetype"]) ? $file->file["filetype"] : 'application/octet-stream';
 
             $links[] = sprintf('<a href="lib/download.php?id=%s">%s</a> | %s', $id, $filename, $filetype);
         }
