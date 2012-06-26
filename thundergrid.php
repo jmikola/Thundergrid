@@ -1,44 +1,42 @@
 <?php
-global $successfulUpload;
 
-class Gallery extends Mongo{
-	function uniqueID(){
-		$db = $this->thundergrid;
-		$collection = $db->images;
-		$cursor = $collection->find();
-		foreach ($cursor as $obj) {
-			$unique_id = $obj['unique_id'];
-			$filename = $obj["filename"];
-			$filetype = $obj["filetype"];
+class Controller {
+    protected $grid;
 
-			$parts = explode(".",$filename);
-			$extension = end($parts);
-			$name = ucwords(str_replace("." . $extension,"",$filename));
-			echo "<a href='lib/download.php?unique_id=".$unique_id."'>".$name."</a> | ".$filetype."<br/>";
-		}
-	}
+    public function __construct(Mongo $mongo = null, $database = 'thundergrid') {
+        if (null === $mongo) {
+            $mongo = new Mongo();
+        }
+
+        $this->grid = $mongo->selectDB($database)->getGridFS();
+    }
 }
 
-class Admin extends Mongo{
-	function upload(){
+class Gallery extends Controller {
+    function getLinks() {
+        $links = array();
 
-		$filetype = $_FILES["pic"]["type"];
-		$filename = $_FILES["pic"]["name"];
-		$unique_id = "content".rand(); //Generates a random ID and stores in within the unique_id variable
+        foreach ($this->grid->find() as $file) {
+            $id = (string) $file->file['_id'];
+            $filename = $file->file["filename"];
+            $filetype = isset($file->file["filetype"]) ? $file->file["filetype"] : 'unknown';
 
-		$conn = new Mongo;
-		$db = $conn->thundergrid;
-		$grid = $db->getGridFS();
-		$grid->storeUpload("pic", array("unique_id" => $unique_id, "filetype" => $filetype, "filename" => $filename));
+            $links[] = sprintf('<a href="lib/download.php?id=%s">%s</a> | %s', $id, $filename, $filetype);
+        }
 
-		$m = new Mongo();
-		$dbgo = $m->thundergrid;
-		$collection = $dbgo->images;
-		$cursor = $collection->find();
-		$obj = array( "unique_id" => $unique_id, "filetype" => $filetype, "filename" => $filename);
-		$collection->insert($obj);
-		$successfulUpload = 1;
-	}
+        return $links;
+    }
 }
 
-?>
+class Download extends Controller {
+    function getFile($id) {
+        return $this->grid->findOne(array('_id' => new MongoId($id)));
+    }
+}
+
+class Admin extends Controller {
+    function upload() {
+        $filetype = image_type_to_mime_type(exif_imagetype($_FILES['pic']['tmp_name']));
+        return $this->grid->storeUpload('pic', array('filetype' => $filetype));
+    }
+}
